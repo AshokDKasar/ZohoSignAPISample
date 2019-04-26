@@ -13,6 +13,7 @@ using Newtonsoft.Json.Linq;
 using ZCRMSDK.CRM.Library.Setup.RestClient;
 using ZCRMSDK.OAuth.Client;
 using ZCRMSDK.OAuth.Contract;
+using ZohoSignAPI.Controllers;
 using ZohoSignAPI.Models;
 
 namespace ZohoSignAPI.Controllers
@@ -25,7 +26,7 @@ namespace ZohoSignAPI.Controllers
             string postContent = "scope=ZohoSign.documents.all";
             //postContent = postContent + "&authtoken=Your AUTHTOKEN";//Give your authtoken
             string grantToken = "1000.7a003ea13ecb9810c2965cd54a70d946.25cae430b8c7c1c5f3e86ff8b9ec7ca6";
-            string accessToken = "1000.751131b2ba03ca2472b4508ec4454636.f284e418b0065cf2533680a2cfb1c260";
+            string accessToken = "1000.26c384a6cc2a15c74f001cb505a5dbc2.2b8a873076fd5dc6d5038cdd6f279320";
 
 
 
@@ -284,11 +285,13 @@ namespace ZohoSignAPI.Controllers
 
         public async Task<IActionResult> Index()
         {
-            string postContent = "scope=ZohoSign.documents.all";
-            //postContent = postContent + "&authtoken=Your AUTHTOKEN";//Give your authtoken
-            string grantToken = "1000.9beccab3be55d8965a101b57220dc705.da72222695365c857a6ff0a31637390c";
-            string accessToken = "1000.a63d66b14d70ca717c0c6695528565d2.8083b6a937caec5f00a317f94f8fe54b";
 
+            SelfSign();
+            return null;
+            //postContent = postContent + "&authtoken=Your AUTHTOKEN";//Give your authtoken
+           
+            string accessToken = "1000.26c384a6cc2a15c74f001cb505a5dbc2.2b8a873076fd5dc6d5038cdd6f279320";
+           // GenerateAccessNRefreshTokenaa();
             #region GetFieldTypes
 
             using (var httpClient = new HttpClient())
@@ -309,13 +312,14 @@ namespace ZohoSignAPI.Controllers
             }
             #endregion
 
+            //Create New Document for Signing
             using (var httpClient = new HttpClient())
             {
                 CreateDocumentModel jsonData = null;
 
                 using (var requestCreateDocument = new HttpRequestMessage(new HttpMethod("POST"), "https://sign.zoho.com/api/v1/requests"))
                 {
-                    //Create New Document for Signing
+                   
                 #region Create New Document for Signing
                     requestCreateDocument.Headers.Add("Authorization", "Zoho-oauthtoken " + accessToken);
                     var multipartContent = new MultipartFormDataContent();
@@ -366,7 +370,7 @@ namespace ZohoSignAPI.Controllers
 
                     // SEND document for signature
                     recipient_email = "ashok.kasar@ayanworks.com";
-                    recipient_name = "ashok kasar";
+                    recipient_name = "Ashutosh Kumar";
                     using (var httpClientSendSign = new HttpClient())
                     {
                         using (var requestSendSign = new HttpRequestMessage(new HttpMethod("POST"), "https://sign.zoho.com/api/v1/requests/" + requestId + "/submit"))
@@ -426,10 +430,32 @@ namespace ZohoSignAPI.Controllers
 
             return View();
 
+            
 
 
+
+
+
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+
+
+        public void GenerateAccessNRefreshTokenaa()
+        {
             #region Generate Access Token and Refresh Token 
-
+            string postContent = "scope=ZohoSign.documents.all";
+            string grantToken = "1000.e98c39633b702b825b7987cd557c4ea7.64ecdd3fa2606d745ed927553947556e";
 
             WebRequest request = WebRequest.Create("https://accounts.zoho.com/oauth/v2/token?code=" + grantToken + "&redirect_uri=https://www.zohoapis.com/crm/v2/&client_id=1000.522HB3WI52Q679002L4O6H06FMHUCH&client_secret=854d4cf847fb7827b307af55dd45f92a278dd68b96&grant_type=authorization_code");
             // Ashok WebRequest request = WebRequest.Create("https://accounts.zoho.com/oauth/v2/token?code=" + grantToken + "&redirect_uri=https://www.zohoapis.com/crm/v2/&client_id=1000.PD0WTBCRLN7670000W1CWEXMD102NH&client_secret=33ac8f02f9202ff9d949ee08d10b4bcb30e12776f8&grant_type=authorization_code");
@@ -455,21 +481,8 @@ namespace ZohoSignAPI.Controllers
 
 
             #endregion
-
-
-
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
 
     public class ResonseModel
@@ -478,7 +491,6 @@ namespace ZohoSignAPI.Controllers
         public string refresh_token { get; set; }
     }
 }
-
 
 
 

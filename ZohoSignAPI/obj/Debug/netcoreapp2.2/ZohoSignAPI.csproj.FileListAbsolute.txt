@@ -56,3 +56,4 @@ E:\Ashok-zohoApiSampleProject\ZohoSignAPISample\ZohoSignAPI\obj\Debug\netcoreapp
 E:\Ashok-zohoApiSampleProject\ZohoSignAPISample\ZohoSignAPI\obj\Debug\netcoreapp2.2\ZohoSignAPI.RazorTargetAssemblyInfo.cs
 E:\Ashok-zohoApiSampleProject\ZohoSignAPISample\ZohoSignAPI\obj\Debug\netcoreapp2.2\ZohoSignAPI.Views.pdb
 E:\Ashok-zohoApiSampleProject\ZohoSignAPISample\ZohoSignAPI\obj\Debug\netcoreapp2.2\ZohoSignAPI.csproj.CopyComplete
+E:\Ashok-zohoApiSampleProject\ZohoSignAPISample\ZohoSignAPI\obj\Debug\netcoreapp2.2\ZohoSignAPI.csprojAssemblyReference.cache
