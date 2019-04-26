@@ -1,0 +1,42 @@
+19-04-16 19:00:23 [ERROR]: Exception while inserting tokens to config file System.UnauthorizedAccessException: Access to the path 'E:\Ashok\ZOHOSIGN\ZohoSignAPI\ZohoSignAPI\Tokens' is denied.
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at ZCRMSDK.OAuth.ClientApp.ZohoOAuthFilePersistence.SaveOAuthTokens(ZohoOAuthTokens zohoOAuthTokens)
+19-04-16 19:09:39 [ERROR]: Exception while inserting tokens to config file System.UnauthorizedAccessException: Access to the path 'E:\Ashok\ZOHOSIGN\ZohoSignAPI\ZohoSignAPI\Tokens' is denied.
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at ZCRMSDK.OAuth.ClientApp.ZohoOAuthFilePersistence.SaveOAuthTokens(ZohoOAuthTokens zohoOAuthTokens)
+19-04-16 19:22:31 [ERROR]: Exception while inserting tokens to config file System.UnauthorizedAccessException: Access to the path 'E:\Ashok\ZOHOSIGN\ZohoSignAPI\ZohoSignAPI\Tokens' is denied.
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at ZCRMSDK.OAuth.ClientApp.ZohoOAuthFilePersistence.SaveOAuthTokens(ZohoOAuthTokens zohoOAuthTokens)
+19-04-16 19:32:30 [ERROR]: Exception while inserting tokens to config file System.UnauthorizedAccessException: Access to the path 'E:\Ashok\ZOHOSIGN\ZohoSignAPI\ZohoSignAPI\Tokens' is denied.
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at ZCRMSDK.OAuth.ClientApp.ZohoOAuthFilePersistence.SaveOAuthTokens(ZohoOAuthTokens zohoOAuthTokens)
+19-04-16 19:40:08 [ERROR]: Exception while inserting tokens to config file System.UnauthorizedAccessException: Access to the path 'E:\Ashok\ZOHOSIGN\ZohoSignAPI\ZohoSignAPI\Tokens' is denied.
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at ZCRMSDK.OAuth.ClientApp.ZohoOAuthFilePersistence.SaveOAuthTokens(ZohoOAuthTokens zohoOAuthTokens)
+19-04-17 12:53:50 [ERROR]: Exception while inserting tokens to config file System.UnauthorizedAccessException: Access to the path 'E:\Ashok\ZOHOSIGN\ZohoSignAPI\ZohoSignAPI\Tokens' is denied.
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at ZCRMSDK.OAuth.ClientApp.ZohoOAuthFilePersistence.SaveOAuthTokens(ZohoOAuthTokens zohoOAuthTokens)
+19-04-17 16:47:36 [ERROR]: Exception while inserting tokens to config file System.UnauthorizedAccessException: Access to the path 'E:\Ashok\ZOHOSIGN\ZohoSignAPI\ZohoSignAPI\Tokens' is denied.
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at ZCRMSDK.OAuth.ClientApp.ZohoOAuthFilePersistence.SaveOAuthTokens(ZohoOAuthTokens zohoOAuthTokens)

@@ -1,0 +1,9 @@
+E:\Ashok\ZOHOSIGN\ZohoSignAPI\API\bin\Debug\netcoreapp2.2\API.deps.json
+E:\Ashok\ZOHOSIGN\ZohoSignAPI\API\bin\Debug\netcoreapp2.2\API.dll
+E:\Ashok\ZOHOSIGN\ZohoSignAPI\API\bin\Debug\netcoreapp2.2\API.pdb
+E:\Ashok\ZOHOSIGN\ZohoSignAPI\API\obj\Debug\netcoreapp2.2\API.csprojAssemblyReference.cache
+E:\Ashok\ZOHOSIGN\ZohoSignAPI\API\obj\Debug\netcoreapp2.2\API.csproj.CoreCompileInputs.cache
+E:\Ashok\ZOHOSIGN\ZohoSignAPI\API\obj\Debug\netcoreapp2.2\API.AssemblyInfoInputs.cache
+E:\Ashok\ZOHOSIGN\ZohoSignAPI\API\obj\Debug\netcoreapp2.2\API.AssemblyInfo.cs
+E:\Ashok\ZOHOSIGN\ZohoSignAPI\API\obj\Debug\netcoreapp2.2\API.dll
+E:\Ashok\ZOHOSIGN\ZohoSignAPI\API\obj\Debug\netcoreapp2.2\API.pdb
