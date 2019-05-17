@@ -3,6 +3,15 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @if (TempData["Success"] != null)
+    {
+        <div    id="successMessage">
+            <strong>@TempData["Success"]</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+
+    <input type="submit" formaction="SendTemplate" value="Send Template" onclick="location.href='@Url.Action("SendTemplate", "Home")';return false;" />
 </div>
