@@ -25,7 +25,7 @@ namespace ZohoSignAPI.Controllers
         string accessToken = "";
         public HomeController()
         {
-            grantToken = "1000.9819e810f851cba17fcca50123f296e5.605ea4c56c943ad144e94a95e2600ffc";
+            grantToken = "1000.e22b4995b3eb2b9423959188333476b0.4e2b41071dacd12ee811df5ff0a087f1";
             accessToken = "1000.f2db348b9840a057a34e58cd9787840d.408467376830d47b446900d8ec052307";
         }
         //ZohoSign.templates.ALL
@@ -174,10 +174,10 @@ namespace ZohoSignAPI.Controllers
 
             //postContent = postContent + "&authtoken=Your AUTHTOKEN";//Give your authtoken
             //string grantToken = "1000.522HB3WI52Q679002L4O6H06FMHUCH";
-
-           // GenerateAccessNRefreshTokenaa();
-           // var resultTemplateDetails = await GetTemplateDetails();
-            return View();
+            GenerateAccessTokenFromRefreshToken();
+            //GenerateAccessNRefreshTokenaa();
+            // var resultTemplateDetails = await GetTemplateDetails();
+            //return View();
 
             #region GetFieldTypes
 
@@ -492,7 +492,7 @@ namespace ZohoSignAPI.Controllers
 
         public async Task<ActionResult> SendTemplate()
         {
-           await GetTemplateDetails();
+            await GetTemplateDetails();
             TempData["Success"] = "Send Successfully!";
             return View("Index"); ;
         }
@@ -590,6 +590,29 @@ namespace ZohoSignAPI.Controllers
 
 
             #endregion
+        }
+        private void GenerateAccessTokenFromRefreshToken()
+        {
+            string clientId = "1000.522HB3WI52Q679002L4O6H06FMHUCH";
+            var clientSecret = "854d4cf847fb7827b307af55dd45f92a278dd68b96";
+            var refreshToken = "1000.757749c033e6bac0006502229735fd5d.eadfd2003dd1ca5b127365854247cccb";
+            var redirectURL = "https://www.zohoapis.com/crm/v2/";
+            WebRequest request = WebRequest.Create("https://accounts.zoho.com/oauth/v2/token?refresh_token="+refreshToken+"&client_id="+clientId+"&client_secret="+clientSecret+"&redirect_uri="+redirectURL+"&grant_type=refresh_token");
+            request.Method = "POST";
+            string postContent = "scope=ZohoSign.documents.all";
+            byte[] byteArray = Encoding.UTF8.GetBytes(postContent);
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.ContentLength = byteArray.Length;
+            Stream dataStream = request.GetRequestStream();
+            dataStream.Write(byteArray, 0, byteArray.Length);
+            dataStream.Close();
+            WebResponse response = request.GetResponse();
+            var responseText = new StreamReader(response.GetResponseStream()).ReadToEnd();
+            var test = JsonConvert.DeserializeObject<ResonseModel>(responseText);
+            //var refreshToken = test.refresh_token;
+            accessToken = test.access_token;
+            response.Close();
+
         }
     }
 
